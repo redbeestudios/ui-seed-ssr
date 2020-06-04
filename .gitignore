@@ -1,0 +1,11 @@
+node_modules
+dist
+.idea/*
+package-lock.json
+*.iml
+*.log
+*.DS_Store
+gradle/*
+.gradle
+gradlew
+gradlew.bat

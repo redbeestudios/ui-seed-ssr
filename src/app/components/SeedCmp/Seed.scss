@@ -1,0 +1,23 @@
+@import "./../../assets/css/variables";
+
+.seed {
+  height: 180px;
+
+  .seed__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .seed__title {
+    margin: 10px 0 0 0;
+    font-weight: bold;
+    font-size: 20pt;
+  }
+
+  .seed__message {
+    margin: 5px 0 0 0;
+    font-weight: bold;
+    font-size: 15pt;
+  }
+}
