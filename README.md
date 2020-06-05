@@ -13,7 +13,7 @@ Tecnologías usadas por la semilla
 
 ## Features pendientes
 Próximos features a implementar
-- [ ] UI Testing
+- [x] ~~UI Testing~~
 - [ ] Node Testing
 - [ ] Mocks
 - [ ] Docker build
