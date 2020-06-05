@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SeedCmp from './../components/SeedCmp/SeedCmp';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { fetchGreeting } from './../redux/actions/ActionGreetings';
@@ -22,6 +23,12 @@ const Home = ({greetings: {name}}) => {
 };
 
 Home.serverFetch = fetchGreeting;
+
+Home.propTypes = {
+  greetings: PropTypes.shape({
+    name: PropTypes.string
+  })
+};
 
 const mapStateToProps = state => ({
     greetings: state.greetings,

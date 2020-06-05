@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { connect } from 'react-redux';
 import { fetchList } from './../redux/actions/ActionList';
@@ -28,13 +29,18 @@ const List = ({onFetchList, list}) => {
   )
 };
 
+List.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.string),
+  onFetchList: PropTypes.func
+};
+
 const mapStateToProps = state => ({
     list: state.list,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onFetchList: () => dispatch(fetchList())
-})
+});
 
 export default connect(
     mapStateToProps,
