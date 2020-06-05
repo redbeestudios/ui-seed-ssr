@@ -1,5 +1,5 @@
 # React SSR Seed
-Semilla para desarollo de microfrontends basados en react y renderizados en el servidor y continuados en el browsser
+Semilla para desarollo de microfrontends basados en react y renderizados en el servidor y continuados en el browser
 
 ## Techs
 Tecnologías usadas por la semilla
