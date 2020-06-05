@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SeedCmp from './../components/SeedCmp/SeedCmp';
+
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { fetchGreeting } from './../redux/actions/ActionGreetings';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+
+import SeedCmp from './../components/SeedCmp/SeedCmp';
+import Skeleton from './../components/Skeleton';
 
 import './Home.scss';
 
-const Home = ({greetings: {name}}) => {
+const Home = ({greetings}) => {
 
   return (
     <HelmetProvider>
@@ -16,7 +18,7 @@ const Home = ({greetings: {name}}) => {
         <title>Seed :: Home</title>
       </Helmet>
       <div className='home'>
-        <Link to='/list'><SeedCmp greeting={`Hola ${name}!`}/></Link>
+        {greetings?<a href='/list'><SeedCmp greeting={`Hola ${greetings.name}!`}/></a>: <Skeleton />}
       </div>
     </HelmetProvider>
   )
@@ -36,5 +38,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    undefined,
+    null,
 )(Home);

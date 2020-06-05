@@ -13,7 +13,7 @@ const List = ({onFetchList, list}) => {
     if(!list) onFetchList();
   });
 
-  const listCmp = <ul>{list ? list.map(it => <li key={it.id}>{it.name}</li>):null}</ul>
+  const listCmp = <ul>{list ? list.map(it => <li key={it.id}>{it.name}</li>):null}</ul>;
 
   return (
     <HelmetProvider>
@@ -30,7 +30,7 @@ const List = ({onFetchList, list}) => {
 };
 
 List.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string),
+  list: PropTypes.arrayOf(PropTypes.shape({name: PropTypes.string, id: PropTypes.number})),
   onFetchList: PropTypes.func
 };
 

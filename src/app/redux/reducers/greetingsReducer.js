@@ -1,4 +1,4 @@
-export const greetingsReducer = (state = {}, action) => {
+export const greetingsReducer = (state = null, action) => {
   switch (action.type) {
     case 'SET_GREETING':
       return action.data;
