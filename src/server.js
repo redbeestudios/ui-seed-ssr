@@ -3,13 +3,12 @@ import path from 'path';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import session from 'express-session';
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 import routes from './app/routes/routes';
 import Layout from './app/components/Layout/Layout';
 import createStore from './app/redux/store/store';
@@ -19,7 +18,6 @@ import api from './api';
 const APP_URL = process.env.APP_URL ? process.env.APP_URL : 'localhost';
 const APP_CONTEXT_PATH = process.env.APP_CONTEXT_PATH ? process.env.APP_CONTEXT_PATH : '';
 const APP_PORT = process.env.APP_PORT ? process.env.APP_PORT : 9000;
-const APP_DOMAIN = process.env.APP_DOMAIN ? process.env.APP_DOMAIN : '.tarjetacencosud.cl';
 
 const app = express();
 
