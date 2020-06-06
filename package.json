@@ -6,7 +6,7 @@
   "author": "redbee",
   "license": "MIT",
   "scripts": {
-    "build": "npm-run-all --parallel build-server build-client",
+    "build": "npm run test && npm-run-all --parallel build-server build-client",
     "build-server": "NODE_ENV=production webpack --env.ENVIRONMENT=production --progress --config webpack.server.config.js",
     "build-client": "NODE_ENV=production webpack --env.ENVIRONMENT=production --progress",
     "dev": "npm-run-all --parallel dev-client dev-server",
