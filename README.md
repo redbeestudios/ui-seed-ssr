@@ -16,8 +16,8 @@ Próximos features a implementar
 - [x] ~~UI Testing~~
 - [ ] Node Testing
 - [ ] Mocks
-- [x] Docker build
-- [ ] Lint
+- [x] ~~Docker build~~
+- [x] ~~Lint~~
 
 ## Empezando
 Instalando dependencias

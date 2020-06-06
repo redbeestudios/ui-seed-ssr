@@ -1,15 +1,15 @@
-import Home from '../pages/Home';
-import List from '../pages/List';
+import Home from "../pages/Home";
+import List from "../pages/List";
 
 export default [
   {
-    path: '/',
+    path: "/",
     component: Home,
-    exact: true
+    exact: true,
   },
   {
-    path: '/list',
+    path: "/list",
     component: List,
-    exact: false
-  }
+    exact: false,
+  },
 ];

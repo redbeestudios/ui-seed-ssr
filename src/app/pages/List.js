@@ -1,48 +1,52 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { connect } from 'react-redux';
-import { fetchList } from './../redux/actions/ActionList';
-import Skeleton from './../components/Skeleton';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { connect } from "react-redux";
+import { fetchList } from "../redux/actions/ActionList";
+import Skeleton from "../components/Skeleton";
 
-import './List.scss';
+import "./List.scss";
 
-const List = ({onFetchList, list}) => {
-
+const List = ({ onFetchList, list }) => {
   useEffect(() => {
-    if(!list) onFetchList();
+    if (!list) onFetchList();
   });
 
-  const listCmp = <ul>{list ? list.map(it => <li key={it.id}>{it.name}</li>):null}</ul>;
+  const listCmp = (
+    <ul>{list ? list.map((it) => <li key={it.id}>{it.name}</li>) : null}</ul>
+  );
 
   return (
     <HelmetProvider>
       <Helmet>
         <title>Seed :: List</title>
       </Helmet>
-      <div className='list'>
+      <div className="list">
         <h1>TODO List</h1>
-        { !list?<Skeleton multiply={2} />:null }
-        { listCmp}
+        {!list ? <Skeleton multiply={2} /> : null}
+        {listCmp}
       </div>
     </HelmetProvider>
-  )
+  );
 };
 
 List.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.shape({name: PropTypes.string, id: PropTypes.number})),
-  onFetchList: PropTypes.func
+  list: PropTypes.arrayOf(
+    PropTypes.shape({ name: PropTypes.string, id: PropTypes.number })
+  ),
+  onFetchList: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-    list: state.list,
+List.defaultProps = {
+  list: null,
+};
+
+const mapStateToProps = (state) => ({
+  list: state.list,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onFetchList: () => dispatch(fetchList())
+  onFetchList: () => dispatch(fetchList()),
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(List);

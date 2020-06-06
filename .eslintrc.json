@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "react/jsx-filename-extension": [
+      1, {"extensions": [".js", ".jsx"]}
+    ],
+    "react/jsx-props-no-spreading": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "ignorePatterns": ["serviceWorker.js", "*.test.js"],
+  "extends": [ "airbnb", "plugin:prettier/recommended" ]
+}

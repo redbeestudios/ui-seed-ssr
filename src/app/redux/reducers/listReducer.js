@@ -1,8 +1,10 @@
-export const listReducer = (state = null, action) => {
+const listReducer = (state = null, action) => {
   switch (action.type) {
-    case 'SET_LIST':
+    case "SET_LIST":
       return action.data;
     default:
       return state;
   }
 };
+
+export default listReducer;

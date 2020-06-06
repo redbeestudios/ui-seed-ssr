@@ -1,8 +1,9 @@
-import express from 'express';
-const router = express.Router();
+import express from "express";
 
-import users from './greetings';
-import list from './list';
+import users from "./greetings";
+import list from "./list";
+
+const router = express.Router();
 
 router.use(users);
 router.use(list);
