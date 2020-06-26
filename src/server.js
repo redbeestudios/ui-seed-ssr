@@ -12,7 +12,7 @@ import { HelmetProvider } from "react-helmet-async";
 import mustacheExpress from "mustache-express";
 import routes from "./app/routes/routes";
 import Layout from "./app/components/Layout/Layout";
-import createStore from "./app/redux/store/store";
+import configureStore from './app/redux/store/ConfigureStore';
 import api from "./api";
 
 const APP_URL = process.env.APP_URL ? process.env.APP_URL : "localhost";
@@ -42,7 +42,7 @@ app.use(
 
 app.get("*", (req, res) => {
   const context = {};
-  const store = createStore({});
+  const store = configureStore({});
 
   const dataRequirements = routes
     .filter((route) => matchPath(req.url, route)) // filter matching paths

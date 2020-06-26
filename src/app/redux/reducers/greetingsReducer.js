@@ -1,7 +1,9 @@
+import {GET_GREETING_SUCCESS} from '../actions/ActionGreetings';
+
 const greetingsReducer = (state = null, action) => {
   switch (action.type) {
-    case "SET_GREETING":
-      return action.data;
+    case GET_GREETING_SUCCESS:
+      return action.response.data;
     default:
       return state;
   }

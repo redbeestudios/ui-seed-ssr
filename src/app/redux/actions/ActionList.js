@@ -1,13 +1,18 @@
-import axios from "axios";
+import {getList} from '../../services/ListService';
 
-const BASE_URL = `${process.env.APP_URL}:${process.env.APP_PORT}`;
+export const GET_LIST='GET_LIST';
+export const GET_LIST_REQUEST='GET_LIST_REQUEST';
+export const GET_LIST_SUCCESS='GET_LIST_SUCCESS';
+export const GET_LIST_FAILURE='GET_LIST_FAILURE';
+
+
 
 export const setList = (data) => ({
   type: "SET_LIST",
   data,
 });
 
-export const fetchList = () => (dispatch) =>
-  axios
-    .get(`${BASE_URL}/api/list`)
-    .then((response) => dispatch(setList(response.data)));
+export const fetchList = () => ({
+  type:GET_LIST,
+  promise:getList()
+})

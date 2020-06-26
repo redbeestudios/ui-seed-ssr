@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
-import createStore from "./redux/store/store";
 
 import Layout from "./components/Layout/Layout";
 import "./assets/css/main.scss";
+import configureStore from './redux/store/ConfigureStore';
 
-const store = createStore(window.REDUX_DATA);
+const store = configureStore(window.REDUX_DATA);
 
 const jsx = (
   <ReduxProvider store={store}>
