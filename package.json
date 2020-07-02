@@ -6,10 +6,10 @@
   "author": "redbee",
   "license": "MIT",
   "scripts": {
-    "build": "npm run test && npm-run-all --parallel build-server build-client",
+    "build": "npm-run-all --parallel build-server build-client",
     "build-server": "NODE_ENV=production webpack --env.ENVIRONMENT=production --progress --config webpack.server.config.js",
     "build-client": "NODE_ENV=production webpack --env.ENVIRONMENT=production --progress",
-    "dev": "npm-run-all --parallel dev-client dev-server",
+    "dev": "npm-run-all build --parallel dev-client dev-server && npm run test",
     "dev-server": "npm-run-all --parallel webpack-server run-server",
     "webpack-server": "NODE_ENV=development webpack --env.ENVIRONMENT=development --progress --watch --config webpack.server.config.js",
     "run-server": "nodemon dist/server.js",
